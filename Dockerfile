@@ -12,6 +12,7 @@ RUN hubot --create /opt/hubot
 WORKDIR /opt/hubot
 RUN npm install && chmod +x bin/hubot
 
+ADD package.json /opt/hubot/package.json
 ADD supervisor.conf /etc/supervisord.conf
 
 CMD ["/usr/bin/supervisord"]
